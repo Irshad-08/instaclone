@@ -1,0 +1,2 @@
+node_modules/
+.env # if you use environment variables

@@ -1,0 +1,25 @@
+<% include ./partials/header.ejs %>
+<div class="w-full min-h-screen bg-zinc-900 px-4 py-5">
+  <div class="flex justify-between items-center">
+    <a href="/profile"><i class="ri-arrow-left-s-line text-white text-[2.4rem]"></i></a>
+    <h1 class="text-white text-[1.4rem] capitalize">Accounts following you</h1>
+  </div>
+  <div class="users">
+    <% followers.forEach(elem => { %>
+    <a href="/profile/<%= elem.username %>" class="outline-none">
+      <div class="text-white flex items-center gap-2 mt-5">
+        <div class="image w-[11vw] h-[11vw] rounded-full bg-sky-100 overflow-hidden">
+          <img src="/images/uploads/<%= elem.profileImage %>" alt="">
+        </div>
+        <div class="text">
+          <a href="/profile/<%= elem.username %>">
+            <h3><%= elem.username %></h3>
+          </a>
+          <h4 class="text-xs opacity-30 leading-none"><%= elem.name %></h4>
+        </div>
+      </div>
+    </a>
+    <% }); %>
+  </div>
+</div>
+<% include ./partials/footer.ejs %>
